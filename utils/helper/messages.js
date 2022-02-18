@@ -3,6 +3,7 @@ exports.failureMessages = {
   DB_CONNECTION_FAILURE: createFailureMessage("Couldn't connect to database:"),
   PASSWORD_SAVE_FAILURE: createFailureMessage("Couldn't save password:"),
   FEED_FETCH_FAILURE: createFailureMessage("Couldn't fetch feed:"),
+  ADD_ARTICLE_FAILURE: createFailureMessage("Couldn't add to feed:"),
   ARTICLE_NOT_FOUND: createFailureMessage("Article not found:"),
   NO_RESULTS_FOUND: createFailureMessage("No results found."),
   CREATE_USER_FAILURE: createFailureMessage("Couldn't create user profile:"),
@@ -14,6 +15,7 @@ exports.failureMessages = {
 exports.successMessages = {
   DB_CONNECTION_SUCCESS: "Connected to database successfully.",
   DB_SYNC_SUCCESS: "Database synced. Tables have been created.",
+  ADD_SEED_DATA: "Added seed data.",
   ADD_SEED_DATA_SUCCESS: "Added test seed data.",
   REMOVE_SEED_DATA_SUCCESS: "Removed test seed data.",
 };

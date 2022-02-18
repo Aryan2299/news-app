@@ -1,9 +1,3 @@
-// Create postman collection
-// Dockerise the app
-// Create video
-// Remove comments
-// Mention author_name assumption while submitting (no reply for query)
-
 const express = require("express");
 
 const router = express.Router();
