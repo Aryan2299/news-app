@@ -7,6 +7,9 @@
   
 # Commands
 
+## Run Docker container  
+     docker-compose up
+
 ## Run project  
      npm install
      npm start
