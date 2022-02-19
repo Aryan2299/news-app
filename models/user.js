@@ -77,6 +77,4 @@ const Users = db
     return new Promise((resolve) => resolve(null));
   });
 
-(async () => await db.sync({ force: true }))();
-
 module.exports = Users;

@@ -42,39 +42,4 @@ const Feed = db
     return new Promise((resolve) => resolve(null));
   });
 
-(async () => {
-  await db
-    .sync({ force: true })
-    .then(async () => {
-      await feedService
-        .addArticle(
-          "www.thumbnails.com/cdn/get/image/1234gh",
-          "Headline Number 1",
-          "category-1",
-          "John Doe"
-        )
-        .catch((err) => console.log(ADD_ARTICLE_FAILURE, err));
-
-      await feedService
-        .addArticle(
-          "www.thumbnails.com/cdn/get/image/1234gh",
-          "Headline Number 2",
-          "category-2",
-          "Jane Doe"
-        )
-        .catch((err) => console.log(ADD_ARTICLE_FAILURE, err));
-
-      feedService
-        .addArticle(
-          "www.thumbnails.com/cdn/get/image/1234gh",
-          "Headline Number 3",
-          "category-3",
-          "Stephen King"
-        )
-        .then(() => console.log(ADD_SEED_DATA))
-        .catch((err) => console.log(ADD_ARTICLE_FAILURE, err));
-    })
-    .catch((err) => console.log(ADD_SEED_DATA_FAILURE, err));
-})();
-
 module.exports = Feed;

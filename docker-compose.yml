@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  app:
+    image: node:14
+    command: sh -c "npm install && npm run start"
+    ports:
+      - $PORT:$PORT
+    working_dir: /app
+    volumes:
+      - ./:/app
+    env_file: ./.env
+    environment:
+      DB_HOST: $DB_HOST
+      DB_USER: $MYSQL_USER
+      DB_PASSWORD: $MYSQL_PASSWORD
+      DB_NAME: $MYSQL_DB
+      DB_PORT: $MYSQL_PORT
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - news-app-mysql-data:/var/lib/mysql
+    ports:
+      - $MYSQL_DOCKER_PORT:$MYSQL_PORT
+    env_file: ./.env
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DB
+volumes:
+  news-app-mysql-data:

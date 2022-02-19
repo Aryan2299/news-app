@@ -40,7 +40,6 @@ exports.searchFeed = (req, res) => {
   feedService
     .searchFeed(limit, offset, searchString)
     .then((articles) => {
-      console.log("search results: ", articles);
       if (articles.length === 0) {
         return new Promise((resolve, reject) => reject(null));
       }
